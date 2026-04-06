@@ -15,8 +15,13 @@ This dataset is fictional and created for analytical and portfolio purposes, sim
 
 ---
 
-## 🖼️ Dashboard Preview
-![Dashboard](images/dashboard.png)
+## 🎨 Dashboard Versions
+
+### Dark Version
+![Dashboard Dark](images/dashboard-dark.png)
+
+### Light Version
+![Dashboard Light](images/dashboard-light.png)
 
 ---
 
@@ -38,6 +43,24 @@ Provide a clear view of financial performance by analyzing revenue, cost, and pr
 - **DAX:** Development of measures for KPIs, margins, and context-based calculations  
 - **Power Query:** Data transformation, cleaning, and Star Schema modeling  
 - **Excel:** Data source management  
+
+---
+
+## 📐 DAX Measures
+
+Key measures used to calculate financial performance:
+
+### Total Revenue
+```DAX
+Total Revenue = SUM(Sales[Revenue])
+
+Total Cost = 
+SUMX(
+    Sales,
+    Sales[Quantity] * RELATED(Products[Unit Cost])
+)
+
+Profit = [Total Revenue] - [Total Cost]
 
 ---
 
